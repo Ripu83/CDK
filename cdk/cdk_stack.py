@@ -4,8 +4,6 @@ from aws_cdk import (
     aws_s3 as s3,
     aws_rds as rds,
     aws_ec2 as ec2,
-    Fn,App, RemovalPolicy, Stack
-
 )
 
 

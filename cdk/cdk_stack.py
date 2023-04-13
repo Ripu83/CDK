@@ -17,10 +17,7 @@ class CdkStack(Stack):
         super().__init__(scope, construct_id, **kwargs)
         #S3
         my_bucket =  s3.Bucket(self,"mybucket",bucket_name="ripu-bucket08012")
-        # The code that defines your stack goes here
         #VPC
-        azs = Fn.get_azs()
-        # vpc = ec2.Vpc.from_vpc_attributes(self, 'ExistingVPC', availability_zones=azs, vpc_id=vpc_id)
         vpc = ec2.Vpc.from_lookup(self, "default_vpc", is_default=True)  
         #RDS
         instance = rds.DatabaseInstance(self, "Instance",
